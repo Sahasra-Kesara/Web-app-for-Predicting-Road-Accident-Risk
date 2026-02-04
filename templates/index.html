@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accident Risk Prediction</title>
+</head>
+<body style="font-family: Arial; text-align:center;">
+
+    <h2>🚗 Accident Risk Prediction System</h2>
+
+    <form method="POST">
+
+        <label>Road Type:</label>
+        <select name="road_type">
+            <option value="highway">Highway</option>
+            <option value="urban">Urban</option>
+            <option value="rural">Rural</option>
+        </select>
+        <br><br>
+
+        <label>Lighting:</label>
+        <select name="lighting">
+            <option value="daylight">Daylight</option>
+            <option value="night">Night</option>
+            <option value="street_lights">Street Lights</option>
+        </select>
+        <br><br>
+
+        <label>Weather:</label>
+        <select name="weather">
+            <option value="clear">Clear</option>
+            <option value="rainy">Rainy</option>
+            <option value="foggy">Foggy</option>
+        </select>
+        <br><br>
+
+        <label>Time of Day:</label>
+        <select name="time_of_day">
+            <option value="morning">Morning</option>
+            <option value="afternoon">Afternoon</option>
+            <option value="night">Night</option>
+        </select>
+        <br><br>
+
+        <label>Speed:</label>
+        <input type="number" name="speed" required>
+        <br><br>
+
+        <label>Traffic Density:</label>
+        <input type="number" name="traffic_density" required>
+        <br><br>
+
+        <button type="submit">Predict Risk</button>
+
+    </form>
+
+    {% if prediction %}
+        <h3>Predicted Accident Risk: {{ prediction }}</h3>
+    {% endif %}
+
+</body>
+</html>
